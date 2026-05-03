@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threat Analytics | Aegis Security</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-shield-virus"></i>
+        <h2>AEGIS</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html" class="active"><i class="fas fa-chart-pie"></i> Threat Analytics</a></li>
+        <li><a href="users.html"><i class="fas fa-users-slash"></i> Suspicious Users</a></li>
+        <li><a href="alerts.html"><i class="fas fa-bell"></i> Alerts</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Project</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1>Detailed Threat Analytics</h1>
+        </div>
+      </header>
+
+      <!-- Charts Grid for Analytics -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        
+        <!-- Weekly Trend Area Chart -->
+        <div class="chart-card" style="grid-column: span 2;">
+          <div class="chart-header">
+            <h3 class="chart-title">Weekly Attack Volume Trend</h3>
+          </div>
+          <div style="height: 350px; width: 100%;">
+            <canvas id="weeklyAreaChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Attack Origins Bar Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Attack Origins by Country</h3>
+          </div>
+          <div style="height: 300px; width: 100%;">
+            <canvas id="countryBarChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Attack Types Pie Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Distribution of Attack Vectors</h3>
+          </div>
+          <div style="height: 300px; width: 100%; display: flex; justify-content: center;">
+            <canvas id="attackTypePieChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <div id="notification-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

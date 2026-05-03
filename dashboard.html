@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Aegis Security</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-shield-virus"></i>
+        <h2>AEGIS</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-pie"></i> Threat Analytics</a></li>
+        <li><a href="users.html"><i class="fas fa-users-slash"></i> Suspicious Users</a></li>
+        <li><a href="alerts.html"><i class="fas fa-bell"></i> Alerts</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Project</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1>Security Overview</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="live-indicator">
+            <div class="pulse"></div> Live Monitoring
+          </div>
+          <div class="profile-btn">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Stats Grid -->
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Total Attacks Blocked</span>
+            <div class="stat-icon primary"><i class="fas fa-shield-alt"></i></div>
+          </div>
+          <div class="stat-value" id="total-attacks-counter">14,285</div>
+          <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +12% from yesterday</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Failed Logins</span>
+            <div class="stat-icon warning"><i class="fas fa-user-lock"></i></div>
+          </div>
+          <div class="stat-value">3,842</div>
+          <div class="stat-trend down"><i class="fas fa-arrow-down"></i> -5% from yesterday</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Active Threats</span>
+            <div class="stat-icon danger"><i class="fas fa-fire"></i></div>
+          </div>
+          <div class="stat-value">87</div>
+          <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +2 critical</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>Global Risk Score</span>
+            <div class="stat-icon purple"><i class="fas fa-tachometer-alt"></i></div>
+          </div>
+          <div class="stat-value" style="color: #ff6600;">78/100</div>
+          <div class="stat-trend up"><i class="fas fa-exclamation-circle"></i> Elevated Risk Level</div>
+        </div>
+      </div>
+
+      <!-- Charts Area -->
+      <div class="charts-grid">
+        <!-- Main Line Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Network Traffic Analysis</h3>
+          </div>
+          <div style="height: 300px; width: 100%;">
+            <canvas id="trafficChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Doughnut Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Threat Levels</h3>
+          </div>
+          <div style="height: 300px; width: 100%; display: flex; justify-content: center;">
+            <canvas id="threatChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity Table -->
+      <div class="table-container">
+        <h3 style="margin-bottom: 20px;">Live Threat Activity</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Target / User</th>
+              <th>IP Source</th>
+              <th>Location</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge high">SQL Injection</span></td>
+              <td>unknown</td>
+              <td>45.22.11.99</td>
+              <td>China</td>
+              <td>Just now</td>
+              <td><span style="color: var(--success-green)"><i class="fas fa-check-circle"></i> Blocked</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge critical">Payment Fraud</span></td>
+              <td>john.doe@email.com</td>
+              <td>10.0.0.5</td>
+              <td>Brazil</td>
+              <td>2 mins ago</td>
+              <td><span style="color: var(--success-green)"><i class="fas fa-check-circle"></i> Blocked</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge medium">Bot Traffic</span></td>
+              <td>N/A (Checkout Page)</td>
+              <td>Multiple IPs</td>
+              <td>Unknown</td>
+              <td>5 mins ago</td>
+              <td><span style="color: var(--warning-yellow)"><i class="fas fa-sync fa-spin"></i> Scrubbing</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge low">Failed Login</span></td>
+              <td>admin@shop.com</td>
+              <td>192.168.1.45</td>
+              <td>Russia</td>
+              <td>12 mins ago</td>
+              <td><span style="color: var(--success-green)"><i class="fas fa-check-circle"></i> Blocked</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Notifications Container -->
+  <div id="notification-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

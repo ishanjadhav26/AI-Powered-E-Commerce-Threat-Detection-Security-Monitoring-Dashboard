@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Project | Aegis Security</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-section {
+      background: var(--bg-card);
+      border: var(--glass-border);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .about-section h2 {
+      color: var(--primary-neon);
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+    }
+    .about-section p, .about-section li {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .about-section ul {
+      padding-left: 20px;
+    }
+    .tech-stack {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .tech-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 204, 0.3);
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: var(--primary-neon);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-shield-virus"></i>
+        <h2>AEGIS</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-pie"></i> Threat Analytics</a></li>
+        <li><a href="users.html"><i class="fas fa-users-slash"></i> Suspicious Users</a></li>
+        <li><a href="alerts.html"><i class="fas fa-bell"></i> Alerts</a></li>
+        <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About Project</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content fade-in">
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1>About the Project</h1>
+        </div>
+      </header>
+
+      <div class="about-section">
+        <h2><i class="fas fa-book-open"></i> Problem Statement</h2>
+        <p>In the modern digital era, E-Commerce platforms are prime targets for cyberattacks including DDoS, brute-force logins, payment fraud, and malicious botnet traffic. Traditional monitoring systems often lack real-time visibility and intuitive visualization, making it difficult for Security Operations Center (SOC) analysts to quickly identify and mitigate threats.</p>
+        <p>This project aims to solve this by providing a visually intuitive, AI-powered Threat Detection Dashboard that simulates enterprise-grade security monitoring, prioritizing critical alerts, and visualizing attack vectors in real-time.</p>
+      </div>
+
+      <div class="about-section">
+        <h2><i class="fas fa-code"></i> Technologies Used</h2>
+        <p>This is a frontend-only static web application built without any backend dependencies, making it perfect for rapid prototyping and exhibitions.</p>
+        <div class="tech-stack mt-3" style="margin-top: 15px;">
+          <div class="tech-badge"><i class="fab fa-html5"></i> HTML5</div>
+          <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3 (Glassmorphism & Flexbox/Grid)</div>
+          <div class="tech-badge"><i class="fab fa-js"></i> Vanilla JavaScript (ES6+)</div>
+          <div class="tech-badge"><i class="fas fa-chart-pie"></i> Chart.js (Data Visualization)</div>
+          <div class="tech-badge"><i class="fab fa-font-awesome"></i> FontAwesome (Icons)</div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2><i class="fas fa-bullseye"></i> Project Objectives & Features</h2>
+        <ul>
+          <li><strong>Real-time Simulation:</strong> Utilize JavaScript timers to simulate live incoming threat data and notification popups.</li>
+          <li><strong>Data Visualization:</strong> Implement interactive Line, Bar, Pie, Doughnut, and Area charts to represent complex security data.</li>
+          <li><strong>Enterprise UI/UX:</strong> Design a dark-themed, glassmorphism UI reminiscent of professional SOC dashboards.</li>
+          <li><strong>Threat Profiling:</strong> Track suspicious users, calculate risk scores, and monitor geographic attack origins.</li>
+        </ul>
+      </div>
+
+      <div class="about-section" style="text-align: center; border: none; background: transparent;">
+        <p>Designed for College Exhibitions, Hackathons, and Portfolios.</p>
+        <a href="index.html" class="btn btn-primary" style="margin-top: 15px;"><i class="fas fa-rocket"></i> Back to Landing Page</a>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="notification-container"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
